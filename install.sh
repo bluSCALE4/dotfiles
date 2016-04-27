@@ -13,6 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	echo -e "\n\nRunning on OSX"
 
 	source install/brew.sh
+	source install/cask.sh
 	source install/osx.sh
 	source install/rvm.sh
 	source install/nvm.sh
@@ -30,8 +31,8 @@ echo "=============================="
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-echo -e "\n\nConfiguring zsh as default shell"
-echo "=============================="
+# echo -e "\n\nConfiguring zsh as default shell"
+# echo "=============================="
 
 # chsh -s $(which zsh)
 # chsh -s $(which bash)

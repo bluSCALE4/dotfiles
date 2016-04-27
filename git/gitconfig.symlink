@@ -1,0 +1,6 @@
+# gitconfig
+[user]
+    name = Luis Larrea
+    email = luis.larrea@gmail.com
+[github]
+    user = bluSCALE4

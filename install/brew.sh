@@ -13,6 +13,7 @@ echo "=============================="
 #brew install tree 
 brew install wget
 brew install gnupg gnupg2
+brew tap caskroom/cask
 
 # development tools 
 brew install git 
