@@ -4,9 +4,9 @@ echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"
 
-git submodule update --init --recursive
+# git submodule update --init --recursive
 
-source install/bash.sh
+# source install/bash.sh
 source install/link.sh
 
 if [ "$(uname)" == "Darwin" ]; then
@@ -25,6 +25,8 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 echo -e "\n\nInstalling Vundle"
+echo "=============================="
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 

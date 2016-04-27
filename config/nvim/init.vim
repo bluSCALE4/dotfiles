@@ -20,7 +20,8 @@ let g:ctrlp_custom_ignore = {
 syntax on
 let g:mustache_abbreviations=1 
 
-set rtp+=~/vimfiles/bundle/Vundle.vim
+" set rtp+=~/vimfiles/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Allow JSX in normal JS files
