@@ -1,6 +1,11 @@
 # gitconfig
 [user]
     name = Luis Larrea
-    email = luis.larrea@gmail.com
+    email = luis.larrea@grainger.com
 [github]
-    user = bluSCALE4
+    user = 7lxl042
+[core]
+	autocrlf = input
+	pager = less -+$LESS -FRX
+[color]
+	ui = true
