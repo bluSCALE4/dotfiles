@@ -1,11 +1,31 @@
 # gitconfig
 [user]
-    name = Luis Larrea
-    email = luis.larrea@grainger.com
+	name = Luis Larrea
+	email = luis.larrea@grainger.com
 [github]
     user = 7lxl042
 [core]
-	autocrlf = input
-	pager = less -+$LESS -FRX
+	pager = less -RFX
+	whitespace = blank-at-eol,blank-at-eof,space-before-tab
+	excludesfile = /Users/ylxl042/.gitignore_global
 [color]
 	ui = true
+[alias]
+	st = status --short --branch
+	cma = commit --all -m
+	qm = "!git checkout $1;git merge @{-1}"
+	lg = log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%reset %C(cyan)[%an]%Creset' --graph
+	dp = diff --word-diff --unified=10
+	so = show --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%reset %C(cyan)[%an]%Creset'
+	unstaged = reset HEAD
+	t10 = !git shortlog -s -n | head -10
+[diff]
+	algorithm = histogram
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/ylxl042/.stCommitMsg

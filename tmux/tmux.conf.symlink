@@ -1,12 +1,29 @@
 set-window-option -g mode-keys vi
 
-# tmux display things in 256 colors
+# usage: fzf-tmux [-u|-d [HEIGHT[%]]] [-l|-r [WIDTH[%]]] [--] [FZF OPTIONS]
+#        (-[udlr]: up/down/left/right)
+
+# select git branches in horizontal split below (15 lines)
+git branch | fzf-tmux -d 15
+
+# select multiple words in vertical split on the left (20% of screen width)
+cat /usr/share/dict/words | fzf-tmux -l 20% --multi --reverse
+
+# Move tmux copy buffer into x clipboard
+bind C-y run "tmux save-buffer - | xclip -i"
+
+# Unbind default prefix and set it to Ctrl+a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# Tmux display things in 256 colors
 set -g default-terminal "screen-256color"
 
-# reload config file
+# Reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 
-# split window and fix path for tmux 1.9
+# Split window and fix path for tmux 1.9
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 
@@ -55,7 +72,14 @@ bind Escape copy-mode
 unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
+bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Move tmux copy buffer into x clipboard
+bind C-y run "tmux save-buffer - | xclip -i"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Activity Monitoring
 setw -g monitor-activity off

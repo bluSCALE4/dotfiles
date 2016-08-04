@@ -11,3 +11,4 @@ brew cask install cinch
 brew cask install sizeup
 brew cask install firefox
 brew cask install amazon-music
+brew cask install qlmarkdown

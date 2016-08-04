@@ -14,14 +14,20 @@ echo "=============================="
 brew install wget
 brew install gnupg gnupg2
 brew tap caskroom/cask
+brew install coreutils
+brew install terminal-notifier
 
 # development tools 
 brew install git 
 brew install tmux
 brew install zsh
 brew install nvm
+brew install fzf
+
+/usr/local/opt/fzf/install
 
 # install neovim 
 brew install neovim/neovim/neovim
+brew install reattach-to-user-namespace
 
 #exit 0
