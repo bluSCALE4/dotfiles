@@ -8,6 +8,7 @@
 	pager = less -RFX
 	whitespace = blank-at-eol,blank-at-eof,space-before-tab
 	excludesfile = /Users/ylxl042/.gitignore_global
+	editor = /usr/local/bin/vim
 [color]
 	ui = true
 [alias]
