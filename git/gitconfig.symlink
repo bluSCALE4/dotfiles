@@ -30,3 +30,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/ylxl042/.stCommitMsg
+[credential]
+	helper = osxkeychain
