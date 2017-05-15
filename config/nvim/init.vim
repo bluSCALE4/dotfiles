@@ -151,7 +151,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs' " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'mxw/vim-jsx'
