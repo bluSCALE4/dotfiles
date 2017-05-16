@@ -34,7 +34,9 @@ vim +PluginInstall +qall
 # echo -e "\n\nConfiguring zsh as default shell"
 # echo "=============================="
 
-# chsh -s $(which zsh)
+export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+chsh -s $(which zsh)
 # chsh -s $(which bash)
 
 echo "Done."
